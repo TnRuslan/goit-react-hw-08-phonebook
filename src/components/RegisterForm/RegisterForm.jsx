@@ -11,7 +11,6 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const inputChange = e => {
-    console.log(e.currentTarget.name);
     switch (e.currentTarget.name) {
       case 'register-name':
         setName(e.currentTarget.value);
@@ -41,8 +40,8 @@ export const RegisterForm = () => {
 
   return (
     <form className={css.register_form} onSubmit={handleFormSubmit}>
-      <label htmlFor="register-name">
-        Name
+      <label htmlFor="register-name" className={css.label}>
+        Name:
         <input
           type="text"
           name="register-name"
@@ -51,8 +50,8 @@ export const RegisterForm = () => {
           onChange={inputChange}
         />
       </label>
-      <label htmlFor="register-email">
-        Email
+      <label htmlFor="register-email" className={css.label}>
+        Email:
         <input
           type="email"
           name="register-email"
@@ -61,8 +60,8 @@ export const RegisterForm = () => {
           onChange={inputChange}
         />
       </label>
-      <label htmlFor="register-password">
-        Password
+      <label htmlFor="register-password" className={css.label}>
+        Password:
         <input
           type="password"
           name="register-password"

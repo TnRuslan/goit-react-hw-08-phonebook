@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/auth.operation';
-// import css from './RegisterForm.module.css';
+import css from './LogInForm.module.css';
 
 export const LogInForm = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +10,6 @@ export const LogInForm = () => {
   const dispatch = useDispatch();
 
   const inputChange = e => {
-    console.log(e.currentTarget.name);
     switch (e.currentTarget.name) {
       case 'logIn-email':
         setEmail(e.currentTarget.value);
@@ -34,9 +33,9 @@ export const LogInForm = () => {
   };
 
   return (
-    <form className="" onSubmit={handleFormSubmit}>
-      <label htmlFor="logIn-email">
-        Email
+    <form className={css.logIn_form} onSubmit={handleFormSubmit}>
+      <label htmlFor="logIn-email" className={css.label}>
+        Email:
         <input
           type="email"
           name="logIn-email"
@@ -46,8 +45,8 @@ export const LogInForm = () => {
         />
       </label>
 
-      <label htmlFor="logIn-password">
-        Password
+      <label htmlFor="logIn-password" className={css.label}>
+        Password:
         <input
           type="password"
           name="logIn-password"
@@ -57,7 +56,7 @@ export const LogInForm = () => {
         />
       </label>
 
-      <button className="" type="submit">
+      <button className={css.logIn_btn} type="submit">
         Log In
       </button>
     </form>

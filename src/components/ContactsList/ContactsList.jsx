@@ -1,17 +1,17 @@
 import { Contact } from './Contact';
 import css from './ContactsList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { fetchContacts } from '../../redux/operations';
+import { useEffect } from 'react';
+import { fetchContacts } from '../../redux/operations';
 import { selectContacts, selectFilter } from '../../redux/selectors';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectContacts);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const filter = useSelector(selectFilter);
   const filteredContacts = contacts.filter(contact => {
@@ -24,7 +24,7 @@ export const ContactsList = () => {
         return (
           <Contact
             name={contact.name}
-            number={contact.phone}
+            number={contact.number}
             key={contact.id}
             id={contact.id}
           />

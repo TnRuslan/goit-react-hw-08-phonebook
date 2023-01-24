@@ -1,34 +1,41 @@
-import { Form } from './Form/Form';
-import { ContactsList } from './ContactsList/ContactsList';
-import { Filter } from './Filter/Filter';
-import css from './App.module.css';
-import { useSelector } from 'react-redux';
-import { selectError, selectStatusLoading } from 'redux/selectors';
-import { RegisterForm } from './RegisterForm/RegisterForm';
-import { LogInForm } from './LogInForm/LogInForm';
-import { LogoutBtn } from './Logout.btn';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsFeching } from 'redux/selectors';
+import { fetchCurrentUser } from './../redux/auth/auth.operation';
+import { RegisterPage } from 'pages/RegisterPage/RegisterPage';
+import { LogInPage } from 'pages/LogInPage/LogInPage';
+import { Laout } from './Layout/Layout';
+import { HomePage } from '../pages/HomePage/HomePage';
+import { useEffect } from 'react';
+import { PrivetRoute } from '../Routes/Private.Rout';
+import { PublicRoute } from '../Routes/Public.Routr';
+import { ContactsPage } from 'pages/ContactsPage/ContactsPage';
 
 export const App = () => {
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
-  const user = useSelector(state => state.user.user.name);
-  const error = useSelector(selectError);
-  const isLoading = useSelector(selectStatusLoading);
+  const dispatch = useDispatch();
+  const isFechingUser = useSelector(selectIsFeching);
 
-  console.log(isLoggedIn);
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
   return (
-    <div className={css.container}>
-      <h1>Phonebook</h1>
-
-      <Form />
-
-      <h2>Contacts:</h2>
-      <Filter />
-      <RegisterForm />
-      <LogInForm />
-      {!error && isLoading && <p>Request in progress...</p>}
-      <ContactsList />
-      {isLoggedIn && <h2>{user} here</h2>}
-      {isLoggedIn && <LogoutBtn />}
-    </div>
+    !isFechingUser && (
+      <Routes>
+        <Route path="/" element={<Laout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/" element={<PublicRoute />}>
+            <Route path="register" element={<RegisterPage />} />
+          </Route>
+          <Route path="/" element={<PublicRoute redirectTo="/contacts" />}>
+            <Route path="logIn" element={<LogInPage />} />
+          </Route>
+          <Route path="/" element={<PrivetRoute />}>
+            <Route path="contacts" element={<ContactsPage />}></Route>
+          </Route>
+          <Route path="*" element={<HomePage />} />
+        </Route>
+      </Routes>
+    )
   );
 };
