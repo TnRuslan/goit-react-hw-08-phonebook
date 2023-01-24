@@ -1,5 +1,4 @@
 .nav_list {
-    /* width: 200px; */
     display: flex;
     flex-direction: column;
     gap: 20px;
