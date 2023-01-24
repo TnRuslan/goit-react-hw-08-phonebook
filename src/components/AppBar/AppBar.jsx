@@ -17,13 +17,13 @@ export const AppBar = () => {
 
   return (
     <nav className={css.nav_list}>
-      <NavItem to="home">Home</NavItem>
+      <NavItem to="/home">Home</NavItem>
       {isLoggedIn ? (
-        <NavItem to="contacts">Contacts</NavItem>
+        <NavItem to="/contacts">Contacts</NavItem>
       ) : (
         <>
-          <NavItem to="register">Register</NavItem>
-          <NavItem to="logIn">Log in</NavItem>
+          <NavItem to="/register">Register</NavItem>
+          <NavItem to="/logIn">Log in</NavItem>
         </>
       )}
     </nav>
