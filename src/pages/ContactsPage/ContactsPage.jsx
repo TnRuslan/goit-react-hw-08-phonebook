@@ -11,15 +11,16 @@ export const ContactsPage = () => {
 
   return (
     <div className={css.wrapper}>
-      <h1>Phonebook</h1>
+      {/* <h1>Phonebook</h1> */}
 
       <Form />
+      <div className={css.list_wrapper}>
+        <h2 className={css.subtitle}>Contacts:</h2>
+        <Filter />
 
-      <h2 className={css.subtitle}>Contacts:</h2>
-      <Filter />
-
-      {!error && isLoading && <p>Request in progress...</p>}
-      <ContactsList />
+        {!error && isLoading && <p>Request in progress...</p>}
+        <ContactsList />
+      </div>
     </div>
   );
 };

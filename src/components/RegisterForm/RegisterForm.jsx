@@ -43,6 +43,7 @@ export const RegisterForm = () => {
       <label htmlFor="register-name" className={css.label}>
         Name:
         <input
+          className={css.input}
           type="text"
           name="register-name"
           id="register-name"
@@ -53,6 +54,7 @@ export const RegisterForm = () => {
       <label htmlFor="register-email" className={css.label}>
         Email:
         <input
+          className={css.input}
           type="email"
           name="register-email"
           id="register-email"
@@ -63,6 +65,7 @@ export const RegisterForm = () => {
       <label htmlFor="register-password" className={css.label}>
         Password:
         <input
+          className={css.input}
           type="password"
           name="register-password"
           id="register-password"
@@ -72,7 +75,7 @@ export const RegisterForm = () => {
       </label>
 
       <button className={css.register_btn} type="submit">
-        Registr
+        Sing in
       </button>
     </form>
   );

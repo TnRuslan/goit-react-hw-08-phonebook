@@ -1,23 +1,17 @@
-/* .wrapper {
-    padding-left: 200px;
-} */
-
 .header {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
 
-    height: 100%;
-    width: 200px;
-    padding: 20px;
-
-    border-right: 2px solid #000000;
-
+  padding: 20px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f3904f;
+  box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
 }
 
 .content {
-    margin-left: 200px;
-    width: 100%;
-    padding: 20px 20px 20px 50px;
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
 }

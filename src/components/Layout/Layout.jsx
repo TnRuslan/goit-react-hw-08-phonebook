@@ -7,12 +7,12 @@ import { selectIsLoggedIn } from 'redux/selectors';
 
 export const Laout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  console.log(isLoggedIn);
 
   return (
     <div className={css.wrapper}>
       <header className={css.header}>
-        <AppBar />
-        {isLoggedIn && <UserMenu />}
+        {isLoggedIn ? <UserMenu /> : <AppBar />}
       </header>
       <div className={css.content}>
         <Outlet />

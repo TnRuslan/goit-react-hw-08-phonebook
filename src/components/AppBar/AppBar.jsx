@@ -17,7 +17,6 @@ export const AppBar = () => {
 
   return (
     <nav className={css.nav_list}>
-      <NavItem to="/home">Home</NavItem>
       {isLoggedIn ? (
         <NavItem to="/contacts">Contacts</NavItem>
       ) : (

@@ -47,6 +47,12 @@ export const Form = () => {
       })
     );
 
+    resetForm();
+    // setName('');
+    // setNumber('');
+  };
+
+  const resetForm = () => {
     setName('');
     setNumber('');
   };
@@ -54,11 +60,12 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit} className={css.form}>
       <label htmlFor="name" className={css.label}>
-        Name
         <input
+          className={css.input_name}
           id="name"
           type="text"
           name="name"
+          placeholder="Name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
@@ -67,11 +74,12 @@ export const Form = () => {
         />
       </label>
       <label htmlFor="tel" className={css.label}>
-        Phone
         <input
+          className={css.input_phone}
           id="tel"
           type="tel"
           name="number"
+          placeholder="Phone"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
@@ -81,6 +89,9 @@ export const Form = () => {
       </label>
       <button className={css.form__btn} type="submit">
         Add contact
+      </button>
+      <button className={css.clear_btn} type="button" onClick={resetForm}>
+        Clear
       </button>
     </form>
   );

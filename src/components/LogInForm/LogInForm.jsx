@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { logIn } from '../../redux/auth/auth.operation';
 import css from './LogInForm.module.css';
 
@@ -37,6 +38,7 @@ export const LogInForm = () => {
       <label htmlFor="logIn-email" className={css.label}>
         Email:
         <input
+          className={css.input}
           type="email"
           name="logIn-email"
           id="logIn-email"
@@ -48,6 +50,7 @@ export const LogInForm = () => {
       <label htmlFor="logIn-password" className={css.label}>
         Password:
         <input
+          className={css.input}
           type="password"
           name="logIn-password"
           id="logIn-password"
@@ -59,6 +62,9 @@ export const LogInForm = () => {
       <button className={css.logIn_btn} type="submit">
         Log In
       </button>
+      <NavLink className={css.signIn_link} to="/register">
+        Sign in
+      </NavLink>
     </form>
   );
 };
