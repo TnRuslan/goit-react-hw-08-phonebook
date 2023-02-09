@@ -19,17 +19,19 @@ export const ContactsList = () => {
   });
 
   return (
-    <ul className={css.contacts__list}>
-      {filteredContacts.map(contact => {
-        return (
-          <Contact
-            name={contact.name}
-            number={contact.number}
-            key={contact.id}
-            id={contact.id}
-          />
-        );
-      })}
-    </ul>
+    <div className={css.list_wrapper}>
+      <ul className={css.contacts__list}>
+        {filteredContacts.map(contact => {
+          return (
+            <Contact
+              name={contact.name}
+              number={contact.number}
+              key={contact.id}
+              id={contact.id}
+            />
+          );
+        })}
+      </ul>
+    </div>
   );
 };

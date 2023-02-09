@@ -1,25 +1,64 @@
 .contact__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding: 5px;
+
+  border-radius: 15px;
+  box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
+}
+
+.contact_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.first_letter {
+  width: 36px;
+  height: 36px;
+  padding: 5px;
+  font-size: 24px;
+  font-weight: 700;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: #f6f7fc;
 }
 
 .contact__btn {
-    padding: 6px;
-    border: 1px solid #020202;
-    border-radius: 4px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: transparent;
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact__btn:hover {
+  background-color: #ffebeb;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
 
 .contact_info {
-    
-    width: 250px;
-    display: flex;
-    justify-content: space-between;
+  width: 250px;
 }
 
 .name {
-    font-size: 18px;
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
+
+  margin-bottom: 5px;
+}
+
+.number {
+  font-size: 14px;
 }

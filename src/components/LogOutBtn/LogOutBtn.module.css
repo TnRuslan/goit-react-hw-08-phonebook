@@ -1,15 +1,13 @@
 .btn {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ff5050;
-    border-radius: 4px;
+  width: 100px;
+  padding: 10px;
+  border: 2px solid #ff5050;
+  border-radius: 15px;
 
-    background-color: #ffffff;
-    color: #ff5050;
-
+  background-color: #ffffff;
+  color: #ff5050;
 }
 
 .btn:hover {
-
-    background-color: #fff0f0;
+  background-color: #fff0f0;
 }

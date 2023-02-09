@@ -1,7 +1,6 @@
 @import-normalize; /* bring in normalize.css styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-
 body {
   margin: 0;
 
@@ -10,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
@@ -122,6 +121,8 @@ body {
     'Apple Color Emoji',
     'Segoe UI Emoji'; */
   /* 2 */
+  height: 100vh;
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
 }
 
 /*
@@ -172,12 +173,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Consolas,
-    'Liberation Mono',
-    Menlo,
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
     monospace;
   /* 1 */
   font-size: 1em;

@@ -60,10 +60,10 @@ export const LogInForm = () => {
       </label>
 
       <button className={css.logIn_btn} type="submit">
-        Log In
+        Sign in
       </button>
       <NavLink className={css.signIn_link} to="/register">
-        Sign in
+        Sign up
       </NavLink>
     </form>
   );

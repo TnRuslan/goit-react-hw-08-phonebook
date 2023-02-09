@@ -21,8 +21,8 @@ export const AppBar = () => {
         <NavItem to="/contacts">Contacts</NavItem>
       ) : (
         <>
-          <NavItem to="/register">Register</NavItem>
-          <NavItem to="/logIn">Log in</NavItem>
+          <NavItem to="/register">Sign up</NavItem>
+          <NavItem to="/logIn">Sign in</NavItem>
         </>
       )}
     </nav>

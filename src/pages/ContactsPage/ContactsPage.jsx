@@ -15,7 +15,7 @@ export const ContactsPage = () => {
 
       <Form />
       <div className={css.list_wrapper}>
-        <h2 className={css.subtitle}>Contacts:</h2>
+        {/* <h2 className={css.subtitle}>Contacts:</h2> */}
         <Filter />
 
         {!error && isLoading && <p>Request in progress...</p>}
