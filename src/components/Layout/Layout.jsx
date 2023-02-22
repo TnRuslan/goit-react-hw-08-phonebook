@@ -8,7 +8,6 @@ import { Logo } from './logo';
 
 export const Laout = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  console.log(isLoggedIn);
 
   return (
     <div className={css.wrapper}>

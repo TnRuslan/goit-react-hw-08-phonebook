@@ -7,7 +7,6 @@ export const Logo = () => {
       y="0px"
       width="50px"
       viewBox="0 0 500 500"
-      enable-background="new 0 0 500 500"
     >
       <path
         fill="#FFFFFF"

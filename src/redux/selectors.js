@@ -11,3 +11,5 @@ export const selectUserName = state => state.user.user.name;
 export const selectIsLoggedIn = state => state.user.isLoggedIn;
 
 export const selectIsFeching = state => state.user.isFechingCarrentUser;
+
+export const selectToken = state => state.user.token;

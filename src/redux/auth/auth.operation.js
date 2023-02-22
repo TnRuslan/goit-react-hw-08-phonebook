@@ -18,7 +18,6 @@ export const register = createAsyncThunk('auth/register', async credentials => {
     token.set(data.token);
     return data;
   } catch (error) {
-    console.log(error);
     return error.errmsg;
   }
 });
